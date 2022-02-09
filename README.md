@@ -1,2 +1,2 @@
-# DSL
-Dsl code dsl in c format
+# SDL
+SDL code SDL in c format
