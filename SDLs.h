@@ -243,3 +243,25 @@ void circle(SDL_Surface *surfaces,int xx,int yy ,int rr,char bcc,char gcc,char r
 	}
 
 }
+void ball(SDL_Surface *surfaces,int xx,int yy ,int rr,char bcc,char gcc,char rcc){
+	long double rrr=(long double)rr,dx=(long double)xx,dy=(long double)yy,ddddd=0.0,d1=0.0,dd1=0,d=0.0,dd=0.0,ddd=0.0,pi=(long double)PI;
+	int x=1,y=1,bc=0,c=7,x1=0,y1=0;
+	long double rrr1=rrr*2;
+	long double xyr=rrr1*pi*2;
+	long double rrr2=xyr/2;
+	for (ddd=0.0;ddd<xyr/2;ddd=ddd+1.0){
+		dd=dy-rrr1*(cos)(ddd/rrr2*pi);
+		d=dx+rrr1*(sin)(ddd/rrr2*pi);
+		ddddd--;
+		if (ddddd>xyr + 1.0)ddddd=0;
+		dd1=dy-rrr1*(cos)(ddddd/rrr2*pi);
+		d1=dx+rrr1*(sin)(ddddd/rrr2*pi);
+		bc=(int)ddd;
+		x=(int)d;
+		y=(int)dd;
+		x1=(int)d1;
+		y1=(int)dd1;
+		hline(surfaces,x1,y,x,bcc,gcc,rcc);
+	}
+
+}
