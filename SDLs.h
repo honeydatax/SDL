@@ -5338,14 +5338,19 @@ void line(SDL_Surface *surfaces,int x,int y,int x2,int y2,char b,char g,char r){
 	if(x>x2 && y>y2)i=4;
 	if(x<x2 && y<y2)i=3;
 	if(x<x2 && y>y2)i=2;
-	if(y==y2)i=0;
-	if(x==x2)i=1;
+	if(y==y2 && x2>x)i=0;
+	if(x==x2 && y2>y)i=1;
+	if(y==y2 && x>x2)i=7;
+	if(x==x2 && y>y2)i=6;
 	if (i==0)hline(surfaces,x,y,x2,b,g,r);
 	if (i==1)vline(surfaces,x,y,y2,b,g,r);
 	if (i==2)lineL(surfaces,x,y,x2,y2,b,g,r);
 	if (i==3)lineR(surfaces,x,y,x2,y2,b,g,r);
 	if (i==4)lineR(surfaces,x2,y2,x,y,b,g,r);
 	if (i==5)lineL(surfaces,x2,y2,x,y,b,g,r);
+	if (i==7)hline(surfaces,x2,y,x,b,g,r);
+	if (i==6)vline(surfaces,x,y2,y,b,g,r);
+
 }
 void circle(SDL_Surface *surfaces,int xx,int yy ,int rr,char bcc,char gcc,char rcc){
 	long double rrr=(long double)rr,dx=(long double)xx,dy=(long double)yy,ddddd=0.0,d1=0.0,dd1=0,d=0.0,dd=0.0,ddd=0.0,pi=(long double)PI;
