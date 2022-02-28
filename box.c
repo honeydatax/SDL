@@ -11,7 +11,7 @@ int main(int argc,char *argv[]){
 	sss=SDL_SetVideoMode(640,480,8,0);
 	short int *pixels=(short int*) sss->pixels;
 	for(n=0;n<4;n++){
-		box(sss,0,n*120,640,120,255,n*63,n*63);
+		box(sss,0,n*120,640,120,n*63,n*63,n*63);
 	}
 	SDL_Flip(sss);
 	SDL_WM_SetCaption("vline...",NULL);

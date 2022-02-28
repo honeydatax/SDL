@@ -5145,7 +5145,7 @@ void vline(	SDL_Surface *surfaces,int x,int y,int y2,int b,int g,int r){
 	count1=y2-yy;
 	if (count1+yy>=surfaces->h)count1=surfaces->h-1-yy;
 	for(nexts1=yy;nexts1<count1+yy;nexts1++){
-		pixels[nexts1*surfaces->w+xx]=(char)(b/85)|((g/85)<<3)|((r/85)<<5);
+		pixels[nexts1*surfaces->w+xx]=(char)(b/85)|((g/85)<<3)|((r/85)<<6);
 	}
 
 }
@@ -5162,7 +5162,7 @@ void hline(	SDL_Surface *surfaces,int x,int y,int x2,int b,int g,int r){
 	count1=x2-xx;
 	if (count1+xx>=surfaces->w)count1=surfaces->w-1-xx;
 	for(nexts1=xx;nexts1<count1+xx;nexts1++){
-		pixels[yy*surfaces->w+nexts1]=(char)(b/85)|((g/85)<<3)|((r/85)<<5);
+		pixels[yy*surfaces->w+nexts1]=(char)(b/85)|((g/85)<<3)|((r/85)<<6);
 	}
 
 }
@@ -5184,7 +5184,7 @@ void box(SDL_Surface *surfaces,int x,int y,int x2,int y2,int b,int g,int r){
 	if (count2+yy>=surfaces->h)count2=surfaces->h-1-yy;
 	for(nexts2=yy;nexts2<count2+yy;nexts2++){
 		for(nexts1=xx;nexts1<count1+xx;nexts1++){
-			pixels[nexts2*surfaces->w+nexts1]=(char)(b/85)|((g/85)<<3)|((r/85)<<5);
+			pixels[nexts2*surfaces->w+nexts1]=(char)(b/85)|((g/85)<<3)|((r/85)<<6);
 		}
 		
 	}
@@ -5196,7 +5196,7 @@ void clears(SDL_Surface *surfaces,int b,int g,int r){
 void setPixel(SDL_Surface *surfaces,int x,int y,int b,int g,int r){
 	char *pixels=(char *) surfaces->pixels;
 	if(x<surfaces->w-1 && y<surfaces->h-1 && y>-1 && x>-1){
-		pixels[y*surfaces->w+x]=(char)(b/85)|((g/85)<<3)|((r/85)<<5);
+		pixels[y*surfaces->w+x]=(char)(b/85)|((g/85)<<3)|((r/85)<<6);
 	}
 
 }

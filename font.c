@@ -9,7 +9,7 @@ int main(int argc,char *argv[]){
 	SDL_Init(SDL_INIT_VIDEO);
 	atexit(SDL_Quit);
 	sss=SDL_SetVideoMode(640,480,8,0);
-	clears(sss,255,250,250);
+	clears(sss,150,150,150);
 	
 	gputs(sss,20,20,0,0,0,"hello World...");
 	SDL_Flip(sss);
